@@ -10,7 +10,8 @@ def ip_reach(list):
         # Sending only 2 ICMP packets with "-n 2"
         # Redirecting stdout and stderr to DEVNULL to supress all output from ping as we are only
         #   interested in the return value being 0 if succesfull or !=0 if failed
-        ping_reply = subprocess.call('ping %s -n 2' % (ip,), stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        ping_reply = subprocess.call('ping %s -c 2' % (ip,), stdout=subprocess.DEVNULL, \
+                                     stderr=subprocess.DEVNULL, shell=True)
         
         if ping_reply == 0:
             print("\n* {} is reachable :)\n".format(ip))
