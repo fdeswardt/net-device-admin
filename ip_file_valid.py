@@ -4,10 +4,10 @@ import sys
 # Checking IP address file and content validity
 def ip_file_valid():
 
-    # Prompting user for input
+    # Prompting user for file with IPs of devices
     ip_file = input("\n# Enter IP file path and name (e.g. ~/device-ips.txt): ")
 
-    # Changing exception message
+    # Check file exists at specified location
     if os.path.isfile(ip_file) == True:
         print("\n* IP file is valid :)\n")
     
@@ -15,7 +15,7 @@ def ip_file_valid():
         print("\n* File {} does not exist :( Please check and try again.\n".format(ip_file))
         sys.exit()
 
-    # Open user selected file for reading (IP addresses file)
+    # Open user selected file for reading(r) IP addresses from file
     selected_ip_file = open(ip_file, 'r')
     
     # Starting from the beginning of the file
