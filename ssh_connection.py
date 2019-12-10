@@ -6,7 +6,7 @@ import re
 
 #Checking username/password file
 #Prompting user for input - USERNAME/PASSWORD FILE
-user_file = input("\n# Enter user file path and name (e.g. D:\MyApps\myfile.txt): ")
+user_file = input("\n# Enter user file path and name (e.g. ~/login-info.txt): ")
 
 #Verifying the validity of the USERNAME/PASSWORD file
 if os.path.isfile(user_file) == True:
@@ -18,7 +18,7 @@ else:
         
 #Checking commands file
 #Prompting user for input - COMMANDS FILE
-cmd_file = input("\n# Enter commands file path and name (e.g. D:\MyApps\myfile.txt): ")
+cmd_file = input("\n# Enter commands file path and name (e.g. ~/command-file.txt): ")
 
 #Verifying the validity of the COMMANDS FILE
 if os.path.isfile(cmd_file) == True:
