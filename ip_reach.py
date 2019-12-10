@@ -32,7 +32,7 @@ def ip_reach(list):
             print(f"Unknown OS \'{name}\', and not able to correctly ping targets, please run on supported OS")
             sys.exit()
 
-        if ping_reply == 0:
+        if ping_reply.returncode == 0:
             print("\n* {} is reachable :)\n".format(ip))
 
             # If ping is successful then continue to next IP in list skipping rest of code in for loop block
