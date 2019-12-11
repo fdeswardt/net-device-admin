@@ -104,7 +104,10 @@ def ssh_connection(ip):
             print(f"\nDONE for device {ip} :)\n")
             
         # Test for reading command output
-        print(str(router_output) + "\n")
+        # this dumps all output - useful for debug: print(str(router_output) + "\n")
+        # find all IPs in output using "[0-9]{1,3}\." regex
+        print(f"IPs for device with IP {ip}: ", \
+              re.findall(r"[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}",str(router_output)))
         
         # Closing the connection
         session.close()
