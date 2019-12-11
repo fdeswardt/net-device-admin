@@ -1,1 +1,13 @@
-show ip int brief
+echo ** Add echo keyword to "comment out" a particular command
+echo ** future version will parse cmdfile and ignore # comments
+echo
+echo show ip interface brief
+echo show interfaces loopback 0
+echo show ntp status
+tacacs-server host 192.168.100.10
+tacacs-server key password
+tacacs-server timeout 10
+ntp server 192.168.100.20
+vlan 22
+vlan 33
+vlan 44
